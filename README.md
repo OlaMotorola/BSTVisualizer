@@ -33,10 +33,10 @@ Interfejs użytkownika został zbudowany przy użyciu biblioteki <code>tkinter</
 
 <ol>
   <li>Sklonuj repozytorium:
-    <pre><code>git clone &lt;https://github.com/OlaMotorola/BSTVisualizer&gt;</code></pre>
+    <pre><code>git clone https://github.com/OlaMotorola/BSTVisualizer.git</code></pre>
   </li>
   <li>Przejdź do katalogu projektu:
-    <pre><code>cd &lt;BSTVisualizer&gt;</code></pre>
+    <pre><code>cd BSTVisualizer</code></pre>
   </li>
   <li>Uruchom aplikację:
     <pre><code>python gui.py</code></pre>
