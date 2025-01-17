@@ -72,15 +72,16 @@ Interfejs użytkownika został zbudowany przy użyciu biblioteki <code>tkinter</
 
 <h3>7. Równoważenie Drzewa</h3>
 <p>Kliknij <b>Zrównoważ drzewo</b>, aby zrównoważyć drzewo.</p>
+
 ---
 
-<Algorytm równoważenia drzewa>
+<h2>Algorytm równoważenia drzewa</h2>
 <p>Algorytm wykorzystuje podejście polegające na zamianie drzewa BST na listę węzłów w porządku in-order, a następnie budowie z tej listy zrównoważonego drzewa. Proces składa się z dwóch głównych kroków:</p>
 <ol>
   <li>
     Zamiana drzewa na listę węzłów w porządku in-order
     <ul>
-      <li>Metoda _flatten_to_spine tworzy listę węzłów w porządku in-order (lewy poddrzewo → korzeń → prawy poddrzewo).</li>
+      <li>Metoda _flatten_to_spine tworzy listę węzłów w porządku in-order (lewe poddrzewo → korzeń → prawe poddrzewo).</li>
       <li>W tym celu _inorder_collect przechodzi rekurencyjnie przez wszystkie węzły drzewa, dodając je do listy.</li>
     </ul>
     <p>Efektem jest lista węzłów, które są posortowane według wartości kluczy.</p>
