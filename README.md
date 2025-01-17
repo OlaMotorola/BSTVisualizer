@@ -12,7 +12,7 @@ BST Visualizer to aplikacja do wizualizacji drzew binarnych poszukiwań (Binary 
   <li>Edytowanie wartości węzłów.</li>
   <li>Wyświetlanie statystyk drzewa.</li>
   <li>Usuwanie całego drzewa.</li>
-  <li>Równoważenie drzewa za pomocą algorytmu DSW (Day-Stout-Warren).</li>
+  <li>Równoważenie drzewa.</li>
 </ul>
 <p>
 Interfejs użytkownika został zbudowany przy użyciu biblioteki <code>tkinter</code> w Pythonie.
@@ -71,7 +71,39 @@ Interfejs użytkownika został zbudowany przy użyciu biblioteki <code>tkinter</
 <p>Kliknij <b>Wyczyść drzewo</b>, aby usunąć wszystkie węzły.</p>
 
 <h3>7. Równoważenie Drzewa</h3>
-<p>Kliknij <b>Zrównoważ drzewo</b>, aby zrównoważyć drzewo za pomocą algorytmu DSW.</p>
+<p>Kliknij <b>Zrównoważ drzewo</b>, aby zrównoważyć drzewo.</p>
+---
+
+<Algorytm równoważenia drzewa>
+<p>Algorytm wykorzystuje podejście polegające na zamianie drzewa BST na listę węzłów w porządku in-order, a następnie budowie z tej listy zrównoważonego drzewa. Proces składa się z dwóch głównych kroków:</p>
+<ol>
+  <li>
+    Zamiana drzewa na listę węzłów w porządku in-order
+    <ul>
+      <li>Metoda _flatten_to_spine tworzy listę węzłów w porządku in-order (lewy poddrzewo → korzeń → prawy poddrzewo).</li>
+      <li>W tym celu _inorder_collect przechodzi rekurencyjnie przez wszystkie węzły drzewa, dodając je do listy.</li>
+    </ul>
+    <p>Efektem jest lista węzłów, które są posortowane według wartości kluczy.</p>
+  </li>
+  <li> Budowa zrównoważonego drzewa
+    <ul>
+      <li>Metoda _build_balanced_tree buduje zrównoważone drzewo z listy węzłów.</li>
+      <li>Działa w sposób rekurencyjny:
+        <ol>
+          <li>Znajduje środkowy element listy (który stanie się korzeniem poddrzewa).</li>
+          <li>Rekurencyjnie tworzy lewe i prawe poddrzewo, dzieląc listę na dwie części:
+            <ul>
+              <li>Elementy po lewej stronie środka stają się lewym poddrzewem.</li>
+              <li>Elementy po prawej stronie środka stają się prawym poddrzewem.</li>
+            </ul>
+          </li>
+          <li>Ustawia odniesienia parent dla każdego węzła.</li>
+        </ol>
+      </li>
+    </ul>
+    <p>Dzięki temu procesowi drzewo staje się zrównoważone, ponieważ węzły są rozkładane równomiernie po obu stronach każdego poddrzewa.</p>
+  </li>
+</ol>
 
 ---
 
